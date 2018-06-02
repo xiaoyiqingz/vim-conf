@@ -1,0 +1,63 @@
+" Plugin list{
+    " 临时禁用某个插件直接将Plugin注释掉即可
+
+    filetype off                  " required
+
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()""
+
+    " Vundle {
+        Plugin 'VundleVim/Vundle.vim'
+    " }
+
+    " Color & Theme {
+        Plugin 'flazz/vim-colorschemes'
+        Plugin 'vim-airline/vim-airline'
+        Plugin 'vim-airline/vim-airline-themes'
+
+        Plugin 'mhinz/vim-startify'             " 起始页插件
+    " }
+
+    " Utils {
+        Plugin 'bronson/vim-trailing-whitespace' " 显示行尾空格
+        Plugin 'Raimondi/delimitMate'            " [ ' 的匹配
+        Plugin 'ctrlpvim/ctrlp.vim'
+        Plugin 'dyng/ctrlsf.vim'
+        Plugin 'godlygeek/tabular'               " 文本对齐
+        Plugin 'tpope/vim-surround'
+        Plugin 'majutsushi/tagbar'
+        Plugin 'Shougo/unite.vim'
+    " }
+
+    " checker {
+        Plugin 'scrooloose/syntastic'            " Track the engine.
+        Plugin 'joonty/vim-phpqa'                " php checker
+    " }
+
+    " Laravel {
+        Plugin 'tpope/vim-dispatch'
+        Plugin 'tpope/vim-projectionist'
+        Plugin 'noahfrederick/vim-composer'
+        Plugin 'noahfrederick/vim-laravel'
+    " }
+
+    " Auto Complete {
+
+        " code snippets {
+            Plugin 'SirVer/ultisnips'
+            Plugin 'honza/vim-snippets'
+
+            Plugin 'mattn/emmet-vim'       " for html complete
+        " }
+
+        if g:zz_platform_mask == 1
+            Plugin 'Valloric/YouCompleteMe'
+        elseif g:zz_platform_mask == 2
+            Plugin 'shawncplus/phpcomplete.vim'
+            Plugin 'Shougo/neocomplcache'
+        endif
+    " }
+
+    call vundle#end()            " required
+" }
