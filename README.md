@@ -44,6 +44,10 @@
 #### 2017-03-09
 * implemet my gf function
 
+#### 2017-03-09
+* 将phpcomplete jump_to_def_tabnew 默认快捷键改为leader p，原快捷键在某些机器上会与ctrl-w up|down|right|left 冲突
+  使用phpcomplete 对ctrl-]的扩展 ctrl-w ctrl-]   ctrl-w ctrl-\
+
 ---
 参考:
 * [ma6174/vim](https://github.com/ma6174/vim)
