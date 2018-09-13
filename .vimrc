@@ -92,8 +92,6 @@
     set laststatus=2                " 总是显示状态行
     set cmdheight=2                 " 命令行（在状态行下）的高度，默认为1，这里是2
 
-    set backspace=2                 " 使backspace正常处理indent, eol, start等
-
     set foldenable                  " 允许折叠
     set foldmarker={,}
     set foldlevel=1
@@ -112,7 +110,7 @@
 
     set viminfo+=!                  " 保存全局变量
     set iskeyword+=_,$,@,%,#,-      " 带有如下符号的单词不要被换行分割
-    set backspace=indent,eol,start
+    set backspace=indent,eol,start  " 同 set backspace = 2 即vim支持删除 indent ， end of line ， start 这三种字符
     set linespace=0                 " 字符间插入的像素行数目
     set number
     "set relativenumber
