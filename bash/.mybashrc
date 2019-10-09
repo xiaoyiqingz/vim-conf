@@ -28,7 +28,7 @@ blue=$'\e[1;34m'
 yellow=$'\e[1;33m'
 normal_colours=$'\e[m'
 
-PS1="\[$yellow\][\[$red\]\u:\w\[$green\]\$git_branch\[$yellow\]]\[$normal_colours\]\\$ "
+PS1="\[$yellow\][\[$red\]\u@\h:\w\[$green\]\$git_branch\[$yellow\]]\[$normal_colours\]\\$ "
 
 # git自动补全
 if [ -f ~/mscript/git_completion ]; then . ~/mscript/git_completion; fi
