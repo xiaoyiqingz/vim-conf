@@ -165,6 +165,9 @@
 
         " 重读配置使修改的配置文件生效
         nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+        " 初始化terminal <version:8.0+>
+        nnoremap <Leader>te :below terminal ++rows=10<CR>
     " }
 
     " Vim Diff {
@@ -209,7 +212,7 @@
         " noremap! <C-A> <Esc>ggVGY
 
         " 选中状态下 Ctrl+c 复制
-        noremap <C-c> "+y
+        " noremap <C-c> "+y
         "noremap <C-v> "+p      与列编辑冲突
     "}
 " }
@@ -425,3 +428,10 @@
     let g:miniBufExplMapCTabSwitchBufs = 1
     let g:miniBufExplModSelTarget = 1
 " }
+
+" mac下文件转码
+" -f是现在的格式
+" -t是目标格式
+" Desktop/from.txt 是输入文件
+" to.txt是目标文件
+"iconv -f UTF-8 -t GBK Desktop/from.txt > to.txt
