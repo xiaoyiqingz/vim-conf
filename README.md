@@ -1,6 +1,5 @@
 ### vim config
 
-#### 2018-12-27
 #### 2016-11-22
 * add vimrc to git
 
@@ -48,6 +47,12 @@
 #### 2017-03-09
 * 将phpcomplete jump_to_def_tabnew 默认快捷键改为leader p，原快捷键在某些机器上会与ctrl-w up|down|right|left 冲突
   使用phpcomplete 对ctrl-]的扩展 ctrl-w ctrl-]   ctrl-w ctrl-\
+
+#### 2020-07-01
+* `php > 7.2` 可以使用`install_check`安装larastan
+```
+alias phpstan='phpstan analyse -c ~/phpstan.neon' 
+```
 
 ---
 参考:
