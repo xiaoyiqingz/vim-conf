@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!--phpcs -s 显示错误及错误的规则 -->
+<!-- 规则位于 src/Standards 下 -->
+<!-- 参考 https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset  -->
+<ruleset name="phpcs_st">
+    <ini name="memory_limit" value="2G"/>
+    <!-- 指定ref则使用ref的规则，在里面可以exclude不使用的规则，包括其他ref的规则  -->
+    <rule ref="PSR2">
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+    </rule>
+
+    <!--<rule ref="Zend">
+        <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps"/>
+        <exclude name="Zend.NamingConventions.ValidVariableName.MemberVarNotCamelCaps"/>
+    </rule> -->
+    <!--<rule ref="Generic">
+        <exclude name="Generic.Files.LineLength.MaxExceeded"/>
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+    </rule> -->
+</ruleset>
