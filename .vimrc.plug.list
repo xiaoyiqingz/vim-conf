@@ -33,8 +33,10 @@
     " }
 
     " checker {
-        Plugin 'scrooloose/syntastic'            " Track the engine.
-        Plugin 'joonty/vim-phpqa'                " php checker
+        Plugin 'scrooloose/syntastic'            " Track the engine  对于php 支持phpcs,phpmd,phpstan 所以有了syntastic后不需要额外使用phpcs等plug
+        "Plugin 'joonty/vim-phpqa'                " php checker
+        "Plugin 'phpcs.vim'
+        "Plugin 'beanworks/vim-phpfmt'
     " }
 
     " Laravel {
