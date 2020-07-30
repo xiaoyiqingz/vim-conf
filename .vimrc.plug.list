@@ -28,6 +28,7 @@
         Plugin 'tpope/vim-surround'
         Plugin 'majutsushi/tagbar'
         Plugin 'Shougo/unite.vim'
+        Plugin 'yggdroot/leaderf'
         Plugin 'mzlogin/vim-markdown-toc'
         "Plugin 'w0rp/ale'
     " }
