@@ -22,8 +22,8 @@
     " Utils {
         Plugin 'bronson/vim-trailing-whitespace' " 显示行尾空格
         Plugin 'Raimondi/delimitMate'            " [ ' 的匹配
-        Plugin 'ctrlpvim/ctrlp.vim'
-        Plugin 'dyng/ctrlsf.vim'
+        "Plugin 'ctrlpvim/ctrlp.vim'
+        "Plugin 'dyng/ctrlsf.vim'
         Plugin 'godlygeek/tabular'               " 文本对齐
         Plugin 'tpope/vim-surround'
         Plugin 'majutsushi/tagbar'
@@ -43,9 +43,8 @@
     " Laravel {
         Plugin 'tpope/vim-dispatch'
         Plugin 'tpope/vim-projectionist'
-        Plugin 'noahfrederick/vim-composer'
-        Plugin 'noahfrederick/vim-laravel'
-        Plugin 'jwalton512/vim-blade'
+        "Plugin 'noahfrederick/vim-composer'
+        "Plugin 'noahfrederick/vim-laravel'
     " }
 
     " Auto Complete {
