@@ -61,6 +61,7 @@
         elseif g:zz_platform_mask == 2
             Plugin 'shawncplus/phpcomplete.vim'
             Plugin 'Shougo/neocomplcache'
+            Plugin 'lvht/phpcd.vim'
         endif
     " }
 
