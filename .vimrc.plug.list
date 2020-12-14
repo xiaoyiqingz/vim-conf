@@ -47,6 +47,7 @@
         "Plugin 'noahfrederick/vim-laravel'
     " }
 
+    Plugin 'fatih/vim-go'
     " Auto Complete {
 
         " code snippets {
