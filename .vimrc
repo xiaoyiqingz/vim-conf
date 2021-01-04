@@ -64,6 +64,7 @@
 
     set noeb                " 去掉输入错误的提示声音
     set novisualbell        " 不要闪烁(不明白)
+    set completeopt=menu
 
    " Read last buffer {
        "让vim记忆上次编辑的位置
