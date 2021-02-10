@@ -1,73 +1,71 @@
 " Plugin list{
     " 临时禁用某个插件直接将Plugin注释掉即可
 
-    filetype off                  " required
-
-    " set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()""
-
-    " Vundle {
-        Plugin 'VundleVim/Vundle.vim'
-    " }
+    call plug#begin()
 
     " Color & Theme {
-        Plugin 'flazz/vim-colorschemes'
-        Plugin 'vim-airline/vim-airline'
-        Plugin 'vim-airline/vim-airline-themes'
+        Plug 'flazz/vim-colorschemes'
+        Plug 'vim-airline/vim-airline'
+        Plug 'vim-airline/vim-airline-themes'
 
-        Plugin 'mhinz/vim-startify'             " 起始页插件
+        Plug 'mhinz/vim-startify'             " 起始页插件
     " }
 
     " Utils {
-        Plugin 'voldikss/vim-floaterm'
-        Plugin 'bronson/vim-trailing-whitespace' " 显示行尾空格
-        Plugin 'Raimondi/delimitMate'            " [ ' 的匹配
-        "Plugin 'ctrlpvim/ctrlp.vim'
-        Plugin 'godlygeek/tabular'               " 文本对齐
-        Plugin 'tpope/vim-surround'
-        Plugin 'majutsushi/tagbar'
-        Plugin 'Shougo/unite.vim'
-        Plugin 'yggdroot/leaderf'
-        Plugin 'mzlogin/vim-markdown-toc'
-        "Plugin 'w0rp/ale'
+        Plug 'voldikss/vim-floaterm'
+        Plug 'bronson/vim-trailing-whitespace' " 显示行尾空格
+        Plug 'Raimondi/delimitMate'            " [ ' 的匹配
+        Plug 'godlygeek/tabular'               " 文本对齐
+        Plug 'tpope/vim-surround'
+        Plug 'gcmt/wildfire.vim'
+        Plug 'majutsushi/tagbar'
+        Plug 'Shougo/unite.vim'
+        Plug 'yggdroot/leaderf'
+        Plug 'tpope/vim-fugitive'
+    " }
+
+    " markdown {
+        "Plug 'mzlogin/vim-markdown-toc', {'for': 'markdown'}
+        "Plug 'tpope/vim-markdown', {'for': 'markdown'}
+        Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+        Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     " }
 
     " checker {
-        Plugin 'scrooloose/syntastic'            " Track the engine  对于php 支持phpcs,phpmd,phpstan 所以有了syntastic后不需要额外使用phpcs等plug
-        "Plugin 'beanworks/vim-phpfmt'
+        Plug 'scrooloose/syntastic'            " Track the engine  对于php 支持phpcs,phpmd,phpstan 所以有了syntastic后不需要额外使用phpcs等plug
+        "Plug 'beanworks/vim-phpfmt'
     " }
-
-    " Laravel {
-        Plugin 'tpope/vim-dispatch'
-        Plugin 'tpope/vim-projectionist'
-        "Plugin 'noahfrederick/vim-composer'
-        "Plugin 'noahfrederick/vim-laravel'
-    " }
-
-     Plugin 'fatih/vim-go'
 
     " Auto Complete {
 
         " code snippets {
-            Plugin 'SirVer/ultisnips'
-            Plugin 'honza/vim-snippets'
+            Plug 'SirVer/ultisnips'
+            Plug 'honza/vim-snippets'
 
-            Plugin 'mattn/emmet-vim'       " for html complete
+            Plug 'mattn/emmet-vim'       " for html complete
         " }
 
         if g:zz_platform_mask == 1
-            Plugin 'Valloric/YouCompleteMe'
+            Plug 'Valloric/YouCompleteMe'
         elseif g:zz_platform_mask == 2
-            " Plugin 'shawncplus/phpcomplete.vim'
-            " Plugin 'Shougo/neocomplcache'
-            Plugin 'lvht/phpcd.vim'
+            " Plug 'shawncplus/phpcomplete.vim'
+            " Plug 'Shougo/neocomplcache'
+            Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
-            Plugin 'Shougo/deoplete.nvim'
-            Plugin 'roxma/nvim-yarp'
-            Plugin 'roxma/vim-hug-neovim-rpc'
+            Plug 'Shougo/deoplete.nvim'
+            Plug 'roxma/nvim-yarp'
+            Plug 'roxma/vim-hug-neovim-rpc'
         endif
+
+        " for go {
+            Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+        " }
+
+        " for c {
+            Plug 'rip-rip/clang_complete', { 'for': 'c' }
+        " }
+
     " }
 
-    call vundle#end()            " required
+    call plug#end()
 " }
