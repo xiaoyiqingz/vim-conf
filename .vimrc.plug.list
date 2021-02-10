@@ -20,6 +20,7 @@
     " }
 
     " Utils {
+        Plugin 'voldikss/vim-floaterm'
         Plugin 'bronson/vim-trailing-whitespace' " 显示行尾空格
         Plugin 'Raimondi/delimitMate'            " [ ' 的匹配
         "Plugin 'ctrlpvim/ctrlp.vim'
