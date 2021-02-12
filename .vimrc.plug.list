@@ -25,9 +25,8 @@
     " }
 
     " markdown {
-        "Plug 'mzlogin/vim-markdown-toc', {'for': 'markdown'}
-        "Plug 'tpope/vim-markdown', {'for': 'markdown'}
-        Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+        Plug 'plasticboy/vim-markdown', {'for': 'markdown'} "table format or other
+        Plug 'dhruvasagar/vim-table-mode' " easy write table
         Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     " }
 

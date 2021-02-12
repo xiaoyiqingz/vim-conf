@@ -66,6 +66,8 @@
     set novisualbell        " 不要闪烁(不明白)
     set completeopt=menu
 
+    set dictionary+=/usr/share/dict/words   " for C-X C-K
+
    " Read last buffer {
        "让vim记忆上次编辑的位置
         autocmd BufReadPost * if line("'\"")>0&&line("'\"")<=line("$") | exe "normal g'\"" | endif
@@ -206,16 +208,6 @@
 
         noremap <F12> gg=G
     " }
-
-    "Other Mapping {
-        " 映射全选+复制 ctrl+a
-        " noremap <C-A> ggVGY
-        " noremap! <C-A> <Esc>ggVGY
-
-        " 选中状态下 Ctrl+c 复制
-        " noremap <C-c> "+y
-        "noremap <C-v> "+p      与列编辑冲突
-    "}
 " }
 
 " Plugins Config {
