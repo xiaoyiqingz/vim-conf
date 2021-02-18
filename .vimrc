@@ -58,15 +58,10 @@
 
     set gdefault            " 行内替换 %s替换的时候本来需要加g选项,才能修改一行中的每一个匹配,设置此选项后加g只匹配第一个，不加g反而匹配每一个
 
-    set completeopt=preview,menu    "代码补全
-
     set clipboard+=unnamed  "共享剪贴板
 
     set noeb                " 去掉输入错误的提示声音
     set novisualbell        " 不要闪烁(不明白)
-    set completeopt=menu
-
-    set dictionary+=/usr/share/dict/words   " for C-X C-K
 
    " Read last buffer {
        "让vim记忆上次编辑的位置
@@ -75,17 +70,19 @@
 
 " }
 
+" Complete {"
+    set completeopt=preview,popup    "代码补全
+    set dictionary+=/usr/share/dict/words   " for C-X C-K
+
+    set wildmenu " 命令行补全
+    set wildmode=list:longest,full
+" }
+
 " VIM UI {
     set showcmd                     " 输入的命令显示出来，看的清楚些
     set showmode
-    set autoread
 
     set cursorline                  " 突出显示当前行
-    "set cursorcolumn
-    "highlight CursorLine ctermbg=255
-    "highlight CursorColumn ctermbg=240
-    "autocmd InsertLeave * se nocul  " 关闭插入模式取消浅色高亮当前行
-    "autocmd InsertEnter * se cul    " 插入模式下用浅色高亮当前行
 
     "set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
     set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [ENC=%{&enc}]\ [TYPE=%Y]\ [POS=%l/%L,%v]\ %{strftime(\"%Y-%m-%d\ -\ %H:%M\")}   " 我的状态行显示的内容（包括文件类型和解码）
@@ -101,8 +98,6 @@
     set foldmethod=marker
     set foldcolumn=0                " 侧边栏出现n列显示折叠关系
 
-    set wildmode=list:longest,full
-    set wildmenu
     set scrolljump=5
     set scrolloff=3                 " 光标移动到buffer的顶部和底部时保持3行距离
 
@@ -116,7 +111,7 @@
     set backspace=indent,eol,start  " 同 set backspace = 2 即vim支持删除 indent ， end of line ， start 这三种字符
     set linespace=0                 " 字符间插入的像素行数目
     set number
-    "set relativenumber
+
     set showmatch                   " 高亮显示匹配的括号
     set matchtime=5                 " 匹配括号高亮的时间（单位是十分之一秒）
     set listchars=tab:→\ ,trail:·,extends:↷,precedes:↶
@@ -148,11 +143,8 @@
     let maplocalleader=","
 
     " Basic default {
-        nnoremap <leader>w :w!<CR>
-        nnoremap <leader>q :wq<CR>
         nnoremap <leader>e :w<CR> :e<CR>
         nnoremap <leader>f :find<CR>
-
         noremap <leader>' :shell<CR>
 
         "显示不可见字符
@@ -186,27 +178,13 @@
     " }
 
     " F- Mapping {
-        " 去空行
-        "nnoremap <F2> :g/^\s*$/d<CR>
         " 去除行尾空格
         nnoremap <F2> :%s/\s\+$//e<CR>
         " 比较文件
         nnoremap <C-F2> :vert diffsplit
 
-        " 新建标签
-        noremap <M-F2> :tabnew<CR>
-
-        " 列出当前目录文件
-        noremap <F3> :tabnew .<CR>
-        " 打开树状文件目录
-        noremap <C-F3> \be
-
-        " 将json格式化
-        noremap <F9> :%!python -m json.tool<CR>
         " 打开vimrc
-        noremap <F10> :vsp ~/.vimrc<CR>
-
-        noremap <F12> gg=G
+        noremap <F04> :vsp ~/.vimrc<CR>
     " }
 " }
 
@@ -297,35 +275,6 @@
 
         endfunc
     " }
-
-    " 扩展gf {
-        "noremap gf :call ExpandGf()<CR>
-
-        "func! ExpandGf()
-        "    " 获取光标下单词
-        "    let zz_file = expand("<cword>") . "*"
-        "    " 获取 当前文件路径
-        "    let zz_path = expand('%:~:h')
-        "    let zz_project = ''
-
-        "    while isdirectory(expand(zz_path))
-        "        if finddir('.git', zz_path) != ""
-        "            let zz_project = zz_path
-        "            break
-        "        endif
-        "        " 获取父目录
-        "        let zz_path = fnamemodify(expand(zz_path), ':h')
-        "    endwhile
-
-        "    let zz_file_path = system("find " . zz_path . " -name '".zz_file."' ")
-        "    if zz_file_path != ""
-        "        execute "vsplit " . zz_file_path
-        "    elseif
-        "        echo 'not find file'
-        "    endif
-
-        "endfunction
-    "}
 "}
 
 " GUI Settings {
@@ -374,9 +323,6 @@
 " Other Or Not Used {
     " quickfix模式
     autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
-
-    "make 运行
-    :set makeprg=g++\ -Wall\ \ %
 
     " 在被分割的窗口间显示空白，便于阅读
     set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:-
