@@ -19,9 +19,12 @@
         Plug 'tpope/vim-surround'
         Plug 'gcmt/wildfire.vim'
         Plug 'majutsushi/tagbar'
+        Plug 'vim-php/tagbar-phpctags.vim'
         Plug 'Shougo/unite.vim'
         Plug 'yggdroot/leaderf'
         Plug 'tpope/vim-fugitive'
+
+        Plug 'mbbill/undotree'
     " }
 
     " markdown {
@@ -50,6 +53,7 @@
             " Plug 'shawncplus/phpcomplete.vim'
             " Plug 'Shougo/neocomplcache'
             Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+            Plug 'arnaud-lb/vim-php-namespace'
 
             Plug 'Shougo/deoplete.nvim'
             Plug 'roxma/nvim-yarp'
