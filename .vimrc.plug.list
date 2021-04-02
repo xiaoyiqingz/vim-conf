@@ -22,6 +22,7 @@
         Plug 'vim-php/tagbar-phpctags.vim'
         Plug 'Shougo/unite.vim'
         Plug 'yggdroot/leaderf'
+        Plug 'skywind3000/Leaderf-snippet'
         Plug 'tpope/vim-fugitive'
 
         Plug 'mbbill/undotree'
@@ -35,7 +36,6 @@
 
     " checker {
         Plug 'scrooloose/syntastic'            " Track the engine  对于php 支持phpcs,phpmd,phpstan 所以有了syntastic后不需要额外使用phpcs等plug
-        "Plug 'beanworks/vim-phpfmt'
     " }
 
     " Auto Complete {
@@ -50,14 +50,13 @@
         if g:zz_platform_mask == 1
             Plug 'Valloric/YouCompleteMe'
         elseif g:zz_platform_mask == 2
-            " Plug 'shawncplus/phpcomplete.vim'
-            " Plug 'Shougo/neocomplcache'
             Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
             Plug 'arnaud-lb/vim-php-namespace'
 
             Plug 'Shougo/deoplete.nvim'
             Plug 'roxma/nvim-yarp'
             Plug 'roxma/vim-hug-neovim-rpc'
+            "Plug 'neoclide/coc.nvim', {'branch': 'release'}
         endif
 
         " for go {
