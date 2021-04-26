@@ -54,6 +54,12 @@
 alias phpstan='phpstan analyse -c ~/phpstan.neon' 
 ```
 
+#### 2021-04-26
+* 使用ale提换synastic
+    * 待支持larastan
+* 使用phpcd+laravel_ide 替换youcomplete 和 phpcomplete
+* vim markdwon 添加 preview 和 tablemode
+
 ---
 参考:
 * [ma6174/vim](https://github.com/ma6174/vim)

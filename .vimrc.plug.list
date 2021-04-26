@@ -30,12 +30,13 @@
 
     " markdown {
         Plug 'plasticboy/vim-markdown', {'for': 'markdown'} "table format or other
-        Plug 'dhruvasagar/vim-table-mode' " easy write table
+        Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'} " easy write table
         Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     " }
 
     " checker {
-        Plug 'scrooloose/syntastic'            " Track the engine  对于php 支持phpcs,phpmd,phpstan 所以有了syntastic后不需要额外使用phpcs等plug
+        "Plug 'scrooloose/syntastic'            " Track the engine  对于php 支持phpcs,phpmd,phpstan 所以有了syntastic后不需要额外使用phpcs等plug
+        Plug 'dense-analysis/ale'
     " }
 
     " Auto Complete {
