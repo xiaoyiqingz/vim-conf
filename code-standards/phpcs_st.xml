@@ -3,19 +3,60 @@
 <!--phpcs -s 显示错误及错误的规则 -->
 <!-- 规则位于 src/Standards 下 -->
 <!-- 参考 https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset  -->
+<!-- 指定ref则使用ref的规则，在里面可以exclude不使用的规则，包括其他ref的规则  -->
+<!--
 <ruleset name="phpcs_st">
     <ini name="memory_limit" value="2G"/>
-    <!-- 指定ref则使用ref的规则，在里面可以exclude不使用的规则，包括其他ref的规则  -->
     <rule ref="PSR2">
         <exclude name="Generic.Files.LineLength.TooLong"/>
     </rule>
 
-    <!--<rule ref="Zend">
+    <rule ref="Zend">
         <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps"/>
         <exclude name="Zend.NamingConventions.ValidVariableName.MemberVarNotCamelCaps"/>
-    </rule> -->
-    <!--<rule ref="Generic">
+    </rule>
+    <rule ref="Generic">
         <exclude name="Generic.Files.LineLength.MaxExceeded"/>
         <exclude name="Generic.Files.LineLength.TooLong"/>
-    </rule> -->
+    </rule>
+</ruleset>
+-->
+
+<ruleset name="Zend Framework coding standard">
+    <description>Zend Framework coding standard</description>
+
+    <!-- display progress -->
+    <arg value="p"/>
+    <arg name="colors"/>
+    <arg name="extensions" value="php,dist,phtml"/>
+
+    <!-- inherit rules from: -->
+    <rule ref="PSR2"/>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="Generic.Formatting.SpaceAfterNot"/>
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <properties>
+            <property name="ignoreBlankLines" value="false"/>
+        </properties>
+    </rule>
+    <rule ref="PSR1.Files.SideEffects">
+        <exclude-pattern>public/index.php</exclude-pattern>
+    </rule>
+    <rule ref="Zend">
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+        <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps"/>
+        <exclude name="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+        <exclude name="Generic.Formatting.SpaceAfterNot.Incorrect"/>
+        <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
+        <exclude name="Zend.NamingConventions.ValidVariableName.ContainsNumbers"/>
+        <exclude name="Zend.NamingConventions.ValidVariableName.MemberVarContainsNumbers"/>
+        <exclude name="Zend.NamingConventions.ValidVariableName.StringVarContainsNumbers"/>
+    </rule>
+    <!-- Paths to check -->
+    <file>app</file>
 </ruleset>
