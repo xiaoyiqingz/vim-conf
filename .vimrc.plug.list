@@ -23,6 +23,8 @@
         Plug 'Shougo/unite.vim'
         Plug 'yggdroot/leaderf'
         Plug 'skywind3000/Leaderf-snippet'
+        Plug 'Yggdroot/LeaderF-changes'
+        Plug 'Yggdroot/LeaderF-marks'
         Plug 'tpope/vim-fugitive'
 
         Plug 'mbbill/undotree'
