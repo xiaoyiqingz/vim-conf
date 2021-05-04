@@ -26,6 +26,7 @@
         Plug 'Yggdroot/LeaderF-changes'
         Plug 'Yggdroot/LeaderF-marks'
         Plug 'tpope/vim-fugitive'
+        Plug 'alvan/vim-php-manual'
 
         Plug 'mbbill/undotree'
     " }
