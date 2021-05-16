@@ -27,6 +27,8 @@
         Plug 'Yggdroot/LeaderF-marks'
         Plug 'tpope/vim-fugitive'
         Plug 'alvan/vim-php-manual'
+        Plug 'https://gitee.com/xiaoyiqingz/vim-laravel-manual.git'
+        Plug 'voldikss/vim-translator'
 
         Plug 'mbbill/undotree'
     " }
@@ -54,8 +56,11 @@
         if g:zz_platform_mask == 1
             Plug 'Valloric/YouCompleteMe'
         elseif g:zz_platform_mask == 2
-            Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+            Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install', 'frozen' : 1 }
             Plug 'arnaud-lb/vim-php-namespace'
+
+            Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+            Plug 'kristijanhusak/deoplete-phpactor'
 
             Plug 'Shougo/deoplete.nvim'
             Plug 'roxma/nvim-yarp'
@@ -64,7 +69,7 @@
         endif
 
         " for go {
-            Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+            Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
         " }
 
         " for c {
