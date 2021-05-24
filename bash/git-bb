@@ -1,0 +1,92 @@
+#########################################################################
+# File Name: git-bb.sh
+# Author: zhangzhe
+# mail: xiaoyiqingz@163.com
+# Created Time: Mon 24 May 2021 08:53:02 PM CST
+# Desc: put sh to $PATH
+#########################################################################
+#!/bin/bash
+
+CACHE=~/.cache/mygit/gitdd
+
+function getBranch {
+    local branch=$(git symbolic-ref --short -q HEAD)
+    echo $branch
+}
+
+function list {
+    local count=1
+
+    for line in `cat $CACHE`
+    do
+        echo  "$count | $line"
+        count=$(($count+1))
+    done
+}
+
+function save {
+    if [ -z $1 ]; then
+        local branch=$(getBranch)
+    else
+        local branch=$1
+    fi
+
+    for line in `cat $CACHE`
+    do
+        if [ $line == $branch ]; then
+            return
+        fi
+    done
+
+    echo $branch
+    echo $branch >> $CACHE
+}
+
+function delete {
+    if [ -z $1 ]; then
+        local branch=$(getBranch)
+    else
+        local branch=$1
+    fi
+
+    echo $branch
+    sed -i '/'"$branch"'/d' $CACHE
+}
+
+function use {
+    local count=1
+
+    for line in `cat $CACHE`
+    do
+        if [ $line == $1 ]; then
+            git checkout $line
+            return
+        elif [ $count == $1 ]; then
+            git checkout $line
+            return
+        fi
+
+        count=$(($count+1))
+    done
+}
+
+function check_help {
+    echo 'bb manage all branch bookmarks that use rencently'
+    echo 'git bb               - list all cache branch'
+    echo '------------------------------------------'
+    echo 'save <branch_name> - Save branch to cache'
+    echo 'delete <branch_name> - Delete branch from cache'
+    echo 'use <branch_name | id> - checkout branch'
+}
+
+if [ -z "$1" ]; then
+    list
+elif [ "$1"  == "save" ]; then
+    save $2
+elif [ "$1"  == "delete" ]; then
+    delete $2
+elif [ "$1"  == "use" ]; then
+    use $2
+elif [ "$1"  == "-h" ];  then
+    check_help
+fi
