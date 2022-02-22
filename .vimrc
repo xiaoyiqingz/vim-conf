@@ -136,6 +136,9 @@
     set softtabstop=4   " 统一缩进为4
     set shiftwidth=4
     set smarttab        " 在行和段开始处使用制表符
+
+    autocmd FileType html,javascript set tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType proto set tabstop=2 softtabstop=2 shiftwidth=2
 " }
 
 " Key Mapping {
