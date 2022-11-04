@@ -12,7 +12,7 @@
     "}
 
     " Basics {
-        set nocompatible    " 不要使用vi的键盘模,式而是vim自己的, 放在最前面
+        set nocompatible    " 不要使用vi的键盘模式而是vim自己的, 放在最前面
     " }
 " }
 
@@ -166,6 +166,9 @@
 
         " 初始化terminal <version:8.0+>
         nnoremap <Leader>te :below terminal ++rows=10<CR>
+
+        " 从0寄存器粘贴
+        vnoremap <silent><Leader>p "0p
     " }
 
     " Vim Diff {
@@ -175,9 +178,9 @@
         noremap <silent> <leader>3 :diffget 3<CR> :diffupdate<CR>
         noremap <silent> <leader>4 :diffget 4<CR> :diffupdate<CR>
         " p 将本文件中内容放到另外一个文件
-        noremap <silent> <leader>p :diffput  <CR> :diffupdate<CR>
+        nnoremap <silent> <leader>p :diffput  <CR> :diffupdate<CR>
         " g 将另外一个文件内容放到本文件中 放在待更新下一行
-        noremap <silent> <leader>g :diffget  <CR> :diffupdate<CR>
+        nnoremap <silent> <leader>g :diffget  <CR> :diffupdate<CR>
     " }
 
     " F- Mapping {
