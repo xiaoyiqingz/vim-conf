@@ -1,0 +1,13 @@
+snippet ctable
+--
+-- 表的结构 `${1:table}`
+--
+CREATE TABLE ${1:table}
+(
+	id bigint NOT NULL AUTO_INCREMENT,
+    $0
+    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (\`id\`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='${2:表注释}';
+endsnippet

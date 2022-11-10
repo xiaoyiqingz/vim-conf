@@ -1,0 +1,65 @@
+snippet	argoTmpl
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: $1
+spec:
+  entrypoint: $2
+  serviceAccountName: argo
+  parallelism: 5
+  podGC:
+    strategy: OnWorkflowCompletion
+  templates:
+    - name: $2
+$0
+endsnippet
+
+snippet	dag
+dag: $0
+  tasks:
+    - name: $1
+      templateRef:
+        name:
+        template:
+      arguments:
+        parameters:
+          - name:
+            value:
+    - name: $2
+      dependencies: [$1]
+endsnippet
+
+snippet inputs
+inputs:
+  parameters:
+    - name:$0
+endsnippet
+
+snippet arguments
+  arguments:
+    parameters:
+      - name:$0
+        value:
+endsnippet
+
+snippet hooks
+hooks: $0
+  failed:
+    expression: tasks["$1"].status == "Failed"
+    templateRef:
+      name: $2
+      template: $3
+    arguments:
+      parameters:
+        - name: $4
+          value: $5
+  success:
+    expression: tasks["$1"].status == "Succeeded"
+    templateRef:
+      name: $2
+      template: $3
+    arguments:
+      parameters:
+        - name: $4
+          value: $5
+endsnippet
