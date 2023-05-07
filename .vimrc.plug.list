@@ -19,7 +19,7 @@
         Plug 'tpope/vim-surround'
         Plug 'gcmt/wildfire.vim'
         Plug 'majutsushi/tagbar'
-        Plug 'vim-php/tagbar-phpctags.vim'
+        Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
         Plug 'Shougo/unite.vim'
         Plug 'yggdroot/leaderf'
         Plug 'skywind3000/Leaderf-snippet'
@@ -29,8 +29,9 @@
         Plug 'alvan/vim-php-manual'
         Plug 'https://gitee.com/xiaoyiqingz/vim-laravel-manual.git'
         Plug 'voldikss/vim-translator'
-
-        Plug 'mbbill/undotree'
+        Plug 'scrooloose/nerdtree'
+        Plug 'scrooloose/nerdtree-project-plugin'
+        Plug 'andrewstuart/vim-kubernetes', { 'for': 'yaml' }
     " }
 
     " markdown {
@@ -39,12 +40,19 @@
         Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     " }
 
+    " yaml {
+        Plug 'yggdroot/indentline', {'for': 'yaml'}
+        Plug 'pedrohdz/vim-yaml-folds', {'for': 'yaml'}
+    " }
+
     " checker {
-        "Plug 'scrooloose/syntastic'            " Track the engine  对于php 支持phpcs,phpmd,phpstan 所以有了syntastic后不需要额外使用phpcs等plug
         Plug 'dense-analysis/ale'
     " }
 
     " Auto Complete {
+        Plug 'Shougo/deoplete.nvim'
+        Plug 'roxma/vim-hug-neovim-rpc'
+        Plug 'roxma/nvim-yarp'
 
         " code snippets {
             Plug 'SirVer/ultisnips'
@@ -53,20 +61,11 @@
             Plug 'mattn/emmet-vim'       " for html complete
         " }
 
-        if g:zz_platform_mask == 1
-            Plug 'Valloric/YouCompleteMe'
-        elseif g:zz_platform_mask == 2
+        " for php {
             Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install', 'frozen' : 1 }
-            Plug 'arnaud-lb/vim-php-namespace'
-
+            Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
             Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
-            Plug 'kristijanhusak/deoplete-phpactor'
-
-            Plug 'Shougo/deoplete.nvim'
-            Plug 'roxma/nvim-yarp'
-            Plug 'roxma/vim-hug-neovim-rpc'
-            "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        endif
+       "}
 
         " for go {
             Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
@@ -76,6 +75,25 @@
             Plug 'rip-rip/clang_complete', { 'for': 'c' }
         " }
 
+        " for js
+            Plug 'wokalski/autocomplete-flow', { 'for': 'js' }
+            " For func argument completion
+            Plug 'Shougo/neosnippet'
+            Plug 'Shougo/neosnippet-snippets'
+            Plug 'carlitux/deoplete-ternjs', { 'for': 'js' , 'do': 'npm install -g tern' }
+        " }
+
+        " for vims {
+            Plug 'shougo/neco-vim'
+        " }
+
+        " for protobuf {
+            Plug 'bufbuild/vim-buf'
+        " }
+
+        " for sql {
+            Plug 'vim-scripts/dbext.vim', { 'for': 'sql' }
+        " }
     " }
 
     call plug#end()

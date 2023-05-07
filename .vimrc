@@ -71,7 +71,10 @@
 " }
 
 " Complete {"
-    set completeopt=preview,popup    "代码补全
+    if !has('nvim')
+        set completeopt=preview,popup    "代码补全
+    endif
+
     set dictionary+=/usr/share/dict/words   " for C-X C-K
 
     set wildmenu " 命令行补全
