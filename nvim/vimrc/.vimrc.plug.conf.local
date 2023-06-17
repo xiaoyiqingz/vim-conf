@@ -1,0 +1,13 @@
+" Plugin Conf {
+    " vim-startify {
+        if isdirectory(expand('~/.vim/bundle/vim-startify'))
+            let g:startify_bookmarks = [
+                        \ {'kodai-web' : '~/work/lcmf/koudai-web/rank'},
+                        \ {'kodai-cms' : '~/work/lcmf/koudai-cms'},
+                        \ {'kodai-trade' : '~/work/lcmf/trade'},
+                        \ {'kodai-passport' : '~/work/lcmf/koudai-passport'},
+                        \ {'tmp' : '~/Documents/tmp'},
+                        \]
+        endif
+    " }
+" }
