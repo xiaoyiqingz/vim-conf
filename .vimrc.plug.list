@@ -13,7 +13,7 @@
 
     " Utils {
         Plug 'voldikss/vim-floaterm'
-        Plug 'bronson/vim-trailing-whitespace' " 显示行尾空格
+        Plug 'ntpeters/vim-better-whitespace' " 显示行尾空格
         Plug 'Raimondi/delimitMate'            " [ ' 的匹配
         Plug 'godlygeek/tabular'               " 文本对齐
         Plug 'tpope/vim-surround'
