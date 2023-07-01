@@ -1,6 +1,15 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
+    use {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require("plugin-config.dashboard-nvim")
+        end,
+        requires = {'nvim-tree/nvim-web-devicons'}
+    }
+
     use {"akinsho/toggleterm.nvim",
         tag = '*',
         config = function()
@@ -56,17 +65,6 @@ return require('packer').startup(function(use)
             --     yank_dry_run = true,
             -- })
         end
-    }
-
-    use {
-        'glepnir/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup {
-                -- config
-            }
-        end,
-        requires = {'nvim-tree/nvim-web-devicons'}
     }
 
     use {
