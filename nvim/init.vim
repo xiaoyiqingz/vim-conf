@@ -27,3 +27,13 @@ autocmd BufNewFile,BufRead *.http TSBufToggle highlight
 " nvim-tree {
     command! Nt : NvimTreeToggle
 " }
+
+
+function! CreateFileWithCurrentDate()
+    execute "cd ~/Desktop/dd/note/"
+    let date = strftime('%Y-%m-%d')
+    let filename = date . '.txt'
+    execute 'e ' . filename
+endfunction
+
+command! Df call CreateFileWithCurrentDate()

@@ -1,12 +1,14 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use {
-        's1n7ax/nvim-terminal',
+    use {"akinsho/toggleterm.nvim",
+        tag = '*',
         config = function()
-            vim.o.hidden = true
-            require('nvim-terminal').setup()
+            require("toggleterm").setup({
+                shell = "/usr/local/bin/bash -l",
+            })
         end,
+        cond = false,   -- not load this plugin
     }
 
     use {

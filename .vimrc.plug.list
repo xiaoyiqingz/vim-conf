@@ -19,7 +19,7 @@
         Plug 'tpope/vim-surround'
         Plug 'gcmt/wildfire.vim'
         Plug 'majutsushi/tagbar'
-        Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
+        Plug 'vim-php/phpctags', {'do': 'composer install',  'for': 'php' }
         Plug 'Shougo/unite.vim'
         Plug 'yggdroot/leaderf'
         Plug 'skywind3000/Leaderf-snippet'

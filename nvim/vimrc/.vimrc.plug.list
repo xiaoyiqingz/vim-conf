@@ -7,19 +7,17 @@
         Plug 'flazz/vim-colorschemes'
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
-
-        "Plug 'mhinz/vim-startify'             " 起始页插件
     " }
 
     " Utils {
         Plug 'voldikss/vim-floaterm'
-        Plug 'bronson/vim-trailing-whitespace' " 显示行尾空格
+        Plug 'ntpeters/vim-better-whitespace' " 显示行尾空格
         Plug 'Raimondi/delimitMate'            " [ ' 的匹配
         Plug 'godlygeek/tabular'               " 文本对齐
         Plug 'tpope/vim-surround'
         Plug 'gcmt/wildfire.vim'
         Plug 'majutsushi/tagbar'
-        Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
+        Plug 'vim-php/phpctags', {'do': 'composer install',  'for': 'php' }
         Plug 'Shougo/unite.vim'
         Plug 'yggdroot/leaderf'
         Plug 'skywind3000/Leaderf-snippet'
@@ -27,8 +25,6 @@
         Plug 'Yggdroot/LeaderF-marks'
         Plug 'tpope/vim-fugitive'
         Plug 'alvan/vim-php-manual'
-        Plug 'https://gitee.com/xiaoyiqingz/vim-laravel-manual.git'
-        Plug 'voldikss/vim-translator'
         Plug 'andrewstuart/vim-kubernetes', { 'for': 'yaml' }
     " }
 
@@ -48,9 +44,13 @@
     " }
 
     " Auto Complete {
-        Plug 'Shougo/deoplete.nvim'
-        Plug 'roxma/vim-hug-neovim-rpc'
-        Plug 'roxma/nvim-yarp'
+        if has('nvim')
+            Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+         else
+            Plug 'Shougo/deoplete.nvim'
+            Plug 'roxma/vim-hug-neovim-rpc'
+            Plug 'roxma/nvim-yarp'
+        endif
 
         " code snippets {
             Plug 'SirVer/ultisnips'
@@ -95,8 +95,8 @@
     " }
 
     if has('nvim')
-        Plug 'ncm2/float-preview.nvim'
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        " Plug 'ncm2/float-preview.nvim'
+        " Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     endif
 
