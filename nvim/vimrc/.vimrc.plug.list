@@ -60,7 +60,8 @@
         " }
 
         " for php {
-            Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install', 'frozen' : 1 }
+            "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install', 'frozen' : 1 }
+            Plug 'xiaoyiqingz/phpcd.vim', { 'for': 'php', 'do': 'composer install', 'frozen' : 1 }
             Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
             Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
        "}
