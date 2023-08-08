@@ -8,9 +8,9 @@ let g:loaded_netrwPlugin = 1
 
 lua require('plugins')
 
+autocmd BufNewFile,BufRead *.api set filetype=ebnf
 autocmd BufNewFile,BufRead *.grpc set filetype=grpc
 autocmd BufNewFile,BufRead *.http set filetype=http
-
 autocmd BufNewFile,BufRead *.http TSBufToggle highlight
 
 " rest-nvim {
@@ -28,7 +28,6 @@ autocmd BufNewFile,BufRead *.http TSBufToggle highlight
     command! Nt : NvimTreeToggle
 " }
 
-
 function! CreateFileWithCurrentDate()
     execute "cd ~/Desktop/dd/note/"
     let date = strftime('%Y-%m-%d')
@@ -37,3 +36,5 @@ function! CreateFileWithCurrentDate()
 endfunction
 
 command! Df call CreateFileWithCurrentDate()
+
+nmap <silent> gx :!open <cword><cr>
