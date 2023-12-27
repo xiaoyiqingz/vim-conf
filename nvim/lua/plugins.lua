@@ -64,4 +64,18 @@ return require('packer').startup(function(use)
         end
     }
 
+    use {
+        'stevearc/oil.nvim',
+        config = function()
+            require("plugin-config.oil")
+        end,
+    }
+
+    use {
+        "ahmedkhalf/project.nvim",
+        config = function()
+            require("plugin-config.project")
+        end
+    }
+
 end)
