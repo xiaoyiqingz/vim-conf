@@ -9,6 +9,17 @@
         elseif has('win32') || has('win64')
             let g:zz_platform_mask = 3
         endif
+
+        function! GetPHPVersion()
+            let php_version_output = system('php -v')
+            if php_version_output =~ 'PHP 8\.'
+                return '8'
+            elseif php_version_output =~ 'PHP 7\.'
+                return '7'
+            else
+                return '7'
+            endif
+        endfunction
     "}
 
     " Basics {
